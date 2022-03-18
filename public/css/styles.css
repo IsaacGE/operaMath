@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body nav .container-fluid {
+    position: fixed;
+    padding: 10px;
+    top: 0px;
+    background-color: rgba(16, 0, 75, 0.349);
+}
+
+.container .bienvenida {
+    text-align: center;
+    color: rgb(8, 0, 114);
+    padding: 50px;
+}
+
+.container-fluid a {
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.name-welcome {
+    text-shadow: 1px 1px 2px #000, 0 0 1em rgb(0, 162, 255), 0 0 0.2em rgb(0, 162, 255);
+    color: #fff;
+}
+
+.img-init {
+    max-width: 50%;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgb(177, 177, 177), 0 0 3em rgb(183, 0, 255), 0 0 0.2em rgb(212, 0, 255);
+}
+
+.options-nav a {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.options-nav a:hover {
+    opacity: 1;
+    text-shadow: 1px 1px 2px #000, 0 0 1em rgb(0, 204, 255), 0 0 0.2em rgb(0, 204, 255);
+}
+
+.form-operaciones {
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(44, 1, 82, 1) 29%, rgba(135, 0, 180, 1) 47%, rgba(107, 7, 156, 1) 65%, rgba(0, 0, 0, 1) 100%);
+    box-shadow: 1px 1px 2px rgb(177, 177, 177), 0 0 3em rgb(104, 0, 145), 0 0 0.2em rgb(106, 0, 128);
+}
+
+.form-operaciones .form-control {
+    text-align: center;
+    background: none;
+    color: #fff;
+    border: none;
+    border-bottom: 3px solid rgb(0, 75, 189);
+}
+
+.input-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.resultado {
+    margin-bottom: 35px;
+    margin-top: 35px;
+    background: rgb(2, 0, 36);
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(8, 31, 135, 1) 42%, rgba(7, 62, 156, 1) 58%, rgba(0, 212, 255, 1) 100%);
+}
+
+.resultado .form-control {
+    border: none;
+    background: none;
+    font-size: 24pt;
+    font-weight: bold;
+    color: #fff;
+}
+
+.buttons-operations {
+    margin-bottom: 25px;
+}
+
+.buttons-operations input {
+    margin-right: 10px;
+    font-weight: bold;
+    border: none;
+}
+
+.buttons-operations .btn-outline-primary:hover {
+    box-shadow: 1px 1px 2px rgb(177, 177, 177), 0 0 3em rgb(0, 119, 255), 0 0 0.2em rgb(8, 136, 255);
+}
+
+.buttons-operations .btn-outline-success:hover {
+    box-shadow: 1px 1px 2px rgb(177, 177, 177), 0 0 3em rgb(34, 204, 0), 0 0 0.2em rgb(0, 185, 31)
+}
+
+.buttons-operations .btn-outline-danger:hover {
+    box-shadow: 1px 1px 2px rgb(177, 177, 177), 0 0 3em rgb(204, 0, 0), 0 0 0.2em rgb(185, 0, 0)
+}
+
+.buttons-operations .btn-outline-warning:hover {
+    box-shadow: 1px 1px 2px rgb(177, 177, 177), 0 0 3em rgb(238, 255, 0), 0 0 0.2em rgb(238, 255, 0)
+}
+
+.historial-operaciones {
+    margin-top: 50px;
+}
+
+.historial-operaciones .title {
+    text-shadow: 1px 1px 2px #000, 0 0 1em rgb(0, 162, 255), 0 0 0.2em rgb(0, 162, 255);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+/*modal-Window*/
+
+.modal-window {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.473);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-window .modal-container {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(2, 0, 40, 1) 31%, rgba(9, 9, 121, 1) 79%, rgba(4, 74, 170, 1) 100%);
+    box-shadow: 1px 1px 2px rgb(177, 177, 177), 0 0 3em rgb(0, 39, 145), 0 0 0.2em rgb(0, 19, 128);
+    min-width: 400px;
+    max-width: 90%;
+    min-height: 300px;
+    max-height: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.modal-window .modal-container .close-modal {
+    background: #900;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-shadow: 1px 1px 2px rgb(177, 177, 177), 0 0 3em rgb(145, 0, 0), 0 0 0.2em rgb(128, 0, 0);
+    font-size: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-window .modal-container .close-modal:hover {
+    transform: scale(1.5);
+    transition: transform .5s;
+}
+
+.modal-window .modal-container h1,
+button {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+}
+
+.modal-window .modal-container span {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    border: solid 1px #fff;
+}
+
+.modal-window .modal-container input {
+    background: none;
+    color: #fff;
+    border: solid 1px #fff;
+}
+
+.modal-window .modal-container .update {
+    float: left;
+    background-color: rgb(23, 100, 0);
+    border: solid 1px rgb(0, 109, 18);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.modal-window .modal-container .update:hover {
+    background: none;
+    color: rgb(0, 109, 18);
+    border: solid 1px rgb(0, 109, 18);
+    transition: 0.4s;
+}
+
+.modal-window .modal-container .btn-cancel {
+    float: right;
+    background-color: rgb(100, 0, 0);
+    border: solid 1px rgb(109, 0, 0);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.modal-window .modal-container .btn-cancel:hover {
+    background: none;
+    color: rgb(109, 0, 0);
+    border: solid 1px rgb(109, 0, 0);
+    transition: 0.4s;
+}
+
+.modal-window .modal-container form div .show-pass {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 2%;
+    top: 5%;
+    cursor: pointer;
+    z-index: 1;
+    color: #fff;
+    padding: 5px;
+    opacity: 0.8;
+    font-size: 14pt;
+}
+
+.modal-window .modal-container form div .show-pass:hover {
+    opacity: 1;
+}

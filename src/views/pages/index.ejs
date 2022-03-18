@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <style>
+        #homeLink {
+            opacity: 1;
+        }
+    </style>
+    <%- include('../partials/header'); %>
+        <div class="container">
+            <% if (login) { %>
+                <h1 class="name-welcome">Hola: <strong>
+                    <%= name %>
+                </strong></h1>
+                <section class="form-operaciones">
+                    <form action="/save-result" method="POST">
+                        <h3>Ingresa los 2 valores para reslizar una de las 4 operaciones</h3>
+                        <div class="row input-form">
+                            <div class="col">
+                                <label for="num1">Ingresa el primer número:</label>
+                                <input type="number" class="form-control" id="num1" name="num1" required>
+                            </div>
+                            <div class="col">
+                                <label for="num2">Ingresa el segundo número:</label>
+                                <input type="number" class="form-control" id="num2" name="num2" required>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <h3>Resultado</h3>
+                            <input type="text" class="form-control" id="result" name="result" required readonly>
+                            <input type="text" class="form-control visually-hidden" id="tipo" name="tipo" required readonly>
+                            <input type="number" class="form-control visually-hidden" id="id_usuario" name="id_usuario" required readonly value="<%= id %>">
+                        </div>
+                        <div class="buttons-operations">
+                            <input type="button" class="btn btn-outline-primary" value="Sumar" onclick="sumar()">
+                            <input type="button" class="btn btn-outline-success" value="Restar" onclick="restar()">
+                            <input type="button" class="btn btn-outline-danger" value="Multiplicar" onclick="multiplicar()">
+                            <input type="button" class="btn btn-outline-warning" value="Dividir" onclick="dividir()">
+                        </div>
+                        <input class="btn btn-success visually-hidden" type="submit" id="save_db" value='Guardar Operacion y resultado'>
+                    </form>
+                </section>
+                <!--
+            <div class="historial-operaciones">
+                <h2 class="title">Operaciones Realizadas</h2>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <td>Tipo de Operación</td>
+                                <td>Primer Número</td>
+                                <td>Segundo Número</td>
+                                <td>Resultado</td>
+                                <td>Fecha y Hora</td>
+                            </tr>
+                        </thead>
+                        <tbody class="results" id="resultados">
+                            <% operaciones.forEach((operacion) => { %>
+                                <tr>
+                                    <td>
+                                        <%= operacion.tipo %>
+                                    </td>
+                                    <td>
+                                        <%= operacion.numero1 %>
+                                    </td>
+                                    <td>
+                                        <%= operacion.numero2 %>
+                                    </td>
+                                    <td>
+                                        <%= operacion.resultado %>
+                                    </td>
+                                    <td>
+                                        <%= operacion.fecha %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        -->
+                <div class="modal-window" id="modalAdd">
+                    <div class="modal-container">
+                        <div class="close-modal" onclick="closeModal()">X</div>
+                        <h1>Actualizar tus datos</h1>
+                        <br>
+                        <form action="/update-user" method="post">
+                            <div class="input-group mb-3" title="Tu Nombre de Usuario No puede ser Modificado por seguridad">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Nombre de usuario:</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="username" value="<%= username %>" readonly>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Nombre:</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nombre" value="<%= name %>" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <button id="btn-show-pass" class="show-pass" type="button" title="Ver contraseña" onclick="showPassEye()"><i id="eye-pass" class="far fa-eye"></i></button>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Confirma tu contraseña:</span>
+                                <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="password" id="password" required>
+                            </div>
+                            <button class="update" type="submit">aceptar</button>
+                            <button class="btn-cancel" onclick="closeModal()" type="reset">cancelar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <%} else { %>
+                    <h1 class="name-welcome"><strong>
+                        <%= name %>
+                    </strong></h1>
+                    <img class="img-init" src="resources/img/home-image.png" alt="">
+                    <% } %>
+        </div>
+
+        <script defer src="resources/fontawesome/js/all.js"></script>
+        <script type="text/javascript" src="resources/js/main.js"></script>
+        <script type="text/javascript" src="resources/js/operaciones.js"></script>
+        <script type="text/javascript" src="resources/js/menus.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <% if (typeof alert !="undefined" ) { %>
+            <script>
+                Swal.fire({
+                    title: '<%= alertTitle %>',
+                    text: '<%= alertMessage %>',
+                    icon: '<%= alertIcon %>',
+                    showConfirmButton: '<%= showConfirmButton %>',
+                    timer: '<%= timer %>'
+                }).then(() => {
+                    window.location = '/<%= ruta %>'
+                })
+            </script>
+            <% } %>
+</body>
+
+</html>

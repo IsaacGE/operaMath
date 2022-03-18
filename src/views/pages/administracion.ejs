@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="resources/css/Historial-Resultados.css">
+</head>
+
+<body>
+    <style>
+        #adminLink {
+            opacity: 1;
+        }
+    </style>
+    <%- include('../partials/header'); %>
+        <div class="container">
+            <div class="contenido">
+                <h1>
+                    Hola admin bienvenido, a continuación veras una tabla donde podras observar los usuarios que han entrado, las operaciones que han realizado y sus resultados obtenidos
+                </h1>
+                <div class="resultados">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Números</th>
+                                <th>operacion</th>
+                                <th>Resultado</th>
+                                <th>Fecha y hora</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% consult.forEach((res) => { %>
+                                <tr>
+                                    <td>
+                                        <%= res.username %>
+                                    </td>
+                                    <td>
+                                        <%= res.numero1 %> |
+                                            <%= res.numero2 %>
+                                    </td>
+                                    <td>
+                                        <%= res.tipo %>
+                                    </td>
+                                    <td>
+                                        <%= res.resultado %>
+                                    </td>
+                                    <td>
+                                        <%= res.fecha %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

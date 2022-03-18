@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/" title="Inicio" id="homeLink"><img src="resources/img/logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Inicio</a>
+        <div class="options-nav">
+            <% if (!login) { %>
+                <a class="navbar-brand" href="login" title="Ingresar" id="loginLink"><img src="resources/img/login-logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Iniciar sesión</a>
+                <a class="navbar-brand" href="register" title="Crear cuenta" id="registerLink"><img src="resources/img/register-logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Registrate</a>
+                <% } else { %>
+                    <% if (username == "admin") { %>
+                        <a class="navbar-brand a-logout" href="administracion" title="Administrar" id="adminLink"><img src="resources/img/admin-logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Administrar</a>
+                        <% } %>
+                            <a class="navbar-brand a-logout" href="logout" title="Salir"><img src="resources/img/logout-icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Cerrar sesión</a>
+                            <a class="navbar-brand a-historial" href="/my-history" title="Mi historial" id="historyLink"><img src="resources/img/historial.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> Historial</a>
+                            <a class="navbar-brand" href="#" onclick="openModal()" title="Editar Información"><img src="resources/img/user-icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> <strong>
+                            <%= username %>
+                        </strong></a>
+                            <% } %>
+        </div>
+    </div>
+</nav>

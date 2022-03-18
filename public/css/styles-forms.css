@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.form-check {
+    text-align: left;
+    color: #fff;
+}
+
+.container {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0;
+    width: 95%;
+    max-width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.formulario {
+    padding: 40px;
+    background-color: rgb(0, 0, 0);
+    width: 500px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 9px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.formulario h1 {
+    font-size: 24pt;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.formulario p a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.formulario p a:hover {
+    text-decoration: underline;
+}
+
+.credenciales {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(0, 132, 255);
+    font-size: 12pt;
+    text-align: center;
+    color: #fff;
+}
+
+.credenciales:hover {
+    transition: border 0.5s;
+    border: solid 1px rgb(0, 132, 255);
+}
+
+.credenciales:focus {
+    border: solid 1px #00E8FF;
+    outline: none;
+}
+
+::placeholder {
+    font-family: FontAwesome;
+    color: #ffffff88;
+    font-size: 14px;
+}
+
+.show-hidde {
+    float: left;
+    margin-bottom: 10px 5px;
+    display: inline;
+    padding: 10px;
+}
+
+.btn-check {
+    height: 18px;
+    width: 18px;
+}
+
+.show-hidde label {
+    font-size: 11pt;
+    color: #fff;
+}
+
+.options-btn a {
+    border-radius: 25px;
+}
+
+.options-btn .btn-outline-success {
+    float: left;
+}
+
+.options-btn .btn-outline-primary {
+    float: right;
+}
+
+.enviar-datos {
+    width: 80%;
+    background-color: rgb(0, 74, 143);
+    border: 1px solid rgb(0, 74, 143);
+    padding: 10px;
+    margin: 15px 0;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 12pt;
+    transition: all 0.25s;
+}
+
+.enviar-datos:hover {
+    background: none;
+    box-shadow: 2px 2px 20px 1px rgb(0, 74, 143);
+    border: 1px solid rgba(0, 74, 143, 0.459);
+    color: rgb(0, 77, 150);
+}
+
+@media (max-width: 399px) {
+    .formulario {
+        padding: 20px;
+    }
+    .formulario h1 {
+        font-size: 18pt;
+        margin-bottom: 30px;
+    }
+    .credenciales {
+        padding: 10px;
+        font-size: 11pt;
+    }
+    .btn-check {
+        height: 15px;
+        width: 15px;
+    }
+    .show-hidde label {
+        font-size: 10pt;
+    }
+    .enviar-datos {
+        font-size: 11pt;
+    }
+}

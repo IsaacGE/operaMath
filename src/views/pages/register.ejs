@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="resources/css/styles-forms.css" class="stylesheet">
+</head>
+
+<body>
+    <style>
+        #registerLink {
+            opacity: 1;
+        }
+    </style>
+    <%- include('../partials/header'); %>
+        <div class="container">
+            <form action="/register" class="formulario" method="POST">
+                <h1 class="titulo">Regístrate</h1>
+                <img src="resources/img/logo_form.png" alt="..." class="avatar">
+                <input type="text" class="credenciales" id="nombre" name="nombre" placeholder="&#xf007; Nombre" required autocomplete="off">
+                <input class="credenciales" type="text" id="username" name="username" placeholder="&#xf2c2; Nombre de Usuario" required autocomplete="off">
+                <input class="credenciales" type="password" id="pass" name="pass" placeholder="&#xf084; Contrasena" required autocomplete="off">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked onclick="mostrarContrasena()">
+                    <label class="form-check-label" id="mostrar-ocultar" for="flexSwitchCheckChecked">Ocultar contraseña</label>
+                </div>
+                <button type="submit" class="enviar-datos"><i class="fas fa-plus-circle"></i> Registrarme</button>
+            </form>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <% if (typeof alert !="undefined" ) { %>
+            <script>
+                Swal.fire({
+                    title: '<%= alertTitle %>',
+                    text: '<%= alertMessage %>',
+                    icon: '<%= alertIcon %>',
+                    showConfirmButton: '<%= showConfirmButton %>',
+                    timer: '<%= timer %>'
+                }).then(() => {
+                    window.location = '/<%= ruta %>'
+                })
+            </script>
+            <% } %>
+</body>
+
+</html>

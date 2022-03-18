@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+        <link rel="stylesheet" href="resources/css/Historial-Resultados.css">
+</head>
+
+<body>
+    <style>
+        #historyLink {
+            opacity: 1;
+        }
+    </style>
+    <%- include('../partials/header'); %>
+        <div class="container">
+            <div class="historial-operaciones">
+                <h2 class="title">Operaciones Realizadas</h2>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <td>Tipo de Operación</td>
+                                <td>Primer Número</td>
+                                <td>Segundo Número</td>
+                                <td>Resultado</td>
+                                <td>Fecha y Hora</td>
+                            </tr>
+                        </thead>
+                        <tbody class="results" id="resultados">
+                            <% operaciones.forEach((operacion) => { %>
+                                <tr>
+                                    <td>
+                                        <%= operacion.tipo %>
+                                    </td>
+                                    <td>
+                                        <%= operacion.numero1 %>
+                                    </td>
+                                    <td>
+                                        <%= operacion.numero2 %>
+                                    </td>
+                                    <td>
+                                        <%= operacion.resultado %>
+                                    </td>
+                                    <td>
+                                        <%= operacion.fecha %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
