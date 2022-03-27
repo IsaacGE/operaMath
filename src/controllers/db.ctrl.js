@@ -1,4 +1,4 @@
-const session = require('express-session');
+const session = require('cookie-session');
 const app = require('../app')
 const connection = require('../database/db');
 
@@ -277,9 +277,8 @@ dbCtrl.useClearCache = app.use(function(req, res, next) {
 });
 
 dbCtrl.getLogout = app.get('/logout', function(req, res) {
-    req.session.destroy(() => {
-        res.redirect('/') // siempre se ejecutará después de que se destruya la sesión
-    })
+    req.session = null
+    res.redirect('/')
 });
 
 module.exports = dbCtrl
